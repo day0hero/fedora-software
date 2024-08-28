@@ -1,2 +1,21 @@
 ---
 # vars file for .
+packages:
+  - vim
+  - tmux
+  - ipmitool
+  - git
+  - tig
+  - skopeo
+  - libvirt
+  - virt-manager
+  - libguestfs
+  - libguestfs-tools
+  - qemu-kvm
+  - minicom
+  - gstreamer1-libav
+  - gstreamer1-plugin-openh264
+  - buildah
+  - certbot
+  - openssl
+
