@@ -1,9 +1,10 @@
 ---
-# vars file for .
+# vars file for fedora-software
 packages:
   - vim
   - tmux
   - ipmitool
+  - gh
   - git
   - git-subtree
   - tig
