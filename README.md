@@ -11,8 +11,6 @@ Role Variables
 |flatpaks | vars/main.yml | List of flatpak applications to get installed |
 |pip_pkgs | vars/main.yml | List of packages to be installed with `pip` |
 |dnf | defaults/main.yml | Settings for `dnf.conf` |
-|omz_git_repo | defaults/main.yml | GitHub Repo Path for oh-my-zsh |
-|zsh_user_git_repo | defaults/main.yml | GitHub Repo for `omz` plugins |
 
 Example Playbook
 ----------------

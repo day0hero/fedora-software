@@ -1,5 +1,6 @@
 ---
 - name: software | speed up dnf installs
+  become: true
   ansible.builtin.lineinfile:
     path: /etc/dnf/dnf.conf
     state: present
@@ -7,11 +8,13 @@
   loop: "{{ dnf }}"
 
 - name: software | enable 3rd party apps for flatpak
+  become: true
   ansible.builtin.get_url:
     url: https://dl.flathub.org/repo/flathub.flatpakrepo
     dest: /etc/yum.repos.d/flathub.flatpakrepo
 
 - name: software | add vsCode repository
+  become: true
   ansible.builtin.copy:
     src: vscode.repo
     dest: /etc/yum.repos.d/vscode.repo
@@ -20,18 +23,21 @@
     mode: '0644'
 
 - name: software | install packages
+  become: true
   ansible.builtin.package:
     name: "{{ item }}"
     state: present
   loop: "{{ packages }}"
 
 - name: software | install software with pip
+  become: true
   ansible.builtin.pip:
     name: "{{ item }}"
     extra_args: --user
   loop: "{{ pip_pkgs }}"
 
 - name: software | install copier tool with pipx
+  become: true
   community.general.pipx:
     name: copier
     state: install
@@ -44,10 +50,7 @@
   loop: "{{ flatpaks }}"
 
 - name: software | remove packages
+  become: true
   ansible.builtin.package:
     name: opensc
     state: absent
-
-- name: software | install oh-my-zsh
-  ansible.builtin.include_tasks:
-    file: oh-my-zsh.yml
