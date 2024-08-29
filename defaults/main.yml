@@ -4,3 +4,5 @@ dnf:
   - 'max_parallel_downloads=20'
   - 'fastestmirror=True'
 
+omz_git_repo: 'https://github.com/ohmyzsh/ohmyzsh.git'
+zsh_user_git_repo: 'https://github.com/zsh-users'
