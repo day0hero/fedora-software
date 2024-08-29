@@ -1,2 +1,49 @@
 ---
-# tasks file for .
+- name: software | speed up dnf installs
+  ansible.builtin.lineinfile:
+    path: /etc/dnf/dnf.conf
+    state: present
+    line: "{{ item }}"
+  loop: "{{ dnf }}"
+
+- name: software | enable 3rd party apps for flatpak
+  ansible.builtin.get_url:
+    url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    dest: /etc/yum.repos.d/flathub.flatpakrepo
+
+- name: software | add vsCode repository
+  ansible.builtin.copy:
+    src: vscode.repo
+    dest: /etc/yum.repos.d/vscode.repo
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: software | install packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ packages }}"
+
+- name: software | install software with pip
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    extra_args: --user
+  loop: "{{ pip_pkgs }}"
+
+- name: software | install copier tool with pipx
+  community.general.pipx:
+    name: copier
+    state: install
+
+- name: software | install flatpaks
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
+    remote: flathub
+  loop: "{{ flatpaks }}"
+
+- name: software | remove packages
+  ansible.builtin.package:
+    name: opensc
+    state: absent

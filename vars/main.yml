@@ -5,6 +5,7 @@ packages:
   - tmux
   - ipmitool
   - git
+  - git-subtree
   - tig
   - skopeo
   - libvirt
@@ -18,4 +19,27 @@ packages:
   - buildah
   - certbot
   - openssl
+  - golang
+  - zsh
+  - python3-pip
+  - pipx
+  - make
+  - code
+  - tmate
+  - helm
 
+flatpaks:
+- com.google.Chrome
+- com.slack.Slack
+- org.gtk.Gtk3theme.Adwaita-dark
+- org.remmina.Remmina
+
+pip_pkgs:
+- botocore
+- boto3
+- awscli
+- awscrt
+- bcrypt
+- openshift
+- kubernetes
+- copier

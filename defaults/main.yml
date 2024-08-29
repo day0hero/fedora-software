@@ -1,2 +1,6 @@
 ---
 # defaults file for .
+dnf:
+  - 'max_parallel_downloads=20'
+  - 'fastestmirror=True'
+
