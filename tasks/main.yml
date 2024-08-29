@@ -1,9 +1,4 @@
 ---
 - name: software | install packages
-  become: true
   ansible.builtin.include_tasks:
     file: package_install.yml
-
-- name: software | install oh-my-zsh
-  ansible.builtin.include_tasks:
-    file: oh-my-zsh.yml
