@@ -28,6 +28,7 @@ packages:
   - code
   - tmate
   - helm
+  - gnome-tweaks
 
 flatpaks:
 - com.google.Chrome
