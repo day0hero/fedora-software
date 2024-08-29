@@ -1,4 +1,5 @@
 # Install oh-my-zsh
+# https://www.lorenzobettini.it/2023/07/my-ansible-role-for-oh-my-zsh-and-other-cli-programs/
 - name: omz | Install oh-my-zsh
   ansible.builtin.git:
     repo: "{{ omz_git_repo }}"
