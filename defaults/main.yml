@@ -1,5 +1,5 @@
 ---
-# defaults file for .
+# defaults file for fedora-software
 dnf:
   - 'max_parallel_downloads=20'
   - 'fastestmirror=True'
