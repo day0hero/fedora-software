@@ -12,7 +12,7 @@ packages:
   - libvirt
   - virt-manager
   - libguestfs
-  - libguestfs-tools
+  - guestfs-tools
   - qemu-kvm
   - minicom
   - gstreamer1-libav
