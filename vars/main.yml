@@ -29,6 +29,8 @@ packages:
   - tmate
   - helm
   - gnome-tweaks
+  - NetworkManager-openvpn
+  - NetworkManager-openvpn-gnome
 
 flatpaks:
 - com.google.Chrome
