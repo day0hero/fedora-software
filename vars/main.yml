@@ -38,7 +38,7 @@ flatpaks:
 - com.slack.Slack
 - org.gtk.Gtk3theme.Adwaita-dark
 - org.remmina.Remmina
-- org.gnome.extensions
+- org.gnome.Extensions
 
 pip_pkgs:
 - botocore
